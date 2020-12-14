@@ -1,0 +1,64 @@
+<h1>List Of Users</h1>
+<button (click)="loadUser()">{{ buttonText }}</button>
+<div style="overflow-x:auto;">
+    <table style="width: 100%; text-align: left" *ngIf="users.length">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Middle Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Role</th>
+            <th scope="col">Address</th>
+            <th scope="col">Created On</th>
+            <th scope="col">Modified On</th>
+            <th scope="col">Action</th>
+        </tr>
+        <tr *ngFor="let user of users;">
+            <td>{{ user.id }}</td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.firstName }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.firstName" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.middleName }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.middleName" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.lastName }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.lastName" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.email }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.email" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.phone }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.phone" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.role }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.role" />
+            </td>
+            <td>
+                <span *ngIf="!user.editable">{{ user.address }}</span>
+                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.address" />
+            </td>
+            <td>
+                <span>{{ user.createdOn }}</span>
+            </td>
+            <td>
+                <span>{{ user.modifiedOn }}</span>
+            </td>
+            <td>
+                <em *ngIf="!user.editable" class="fa fa-edit" style="font-size: 30px; margin-right: 20px"
+                    (click)="updateUser(user.id)"></em>
+                <em *ngIf="!user.editable" class="fa fa-trash-o" style="font-size: 30px"
+                    (click)="deleteUser(user.id)"></em>
+                <button *ngIf="user.editable" (click)="saveUser(user.id)">Save</button>
+                <button *ngIf="user.editable" (click)="cancelUpdate(user.id)">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</div>

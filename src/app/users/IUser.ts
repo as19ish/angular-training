@@ -2,12 +2,13 @@ export interface IUser{
     id: number,
     firstName: string;
     middleName?: string;
-    lastName?: string;
+    lastName: string;
     email: string;
-    phone?: number;
+    phone: number;
     address?: string;
     role: string;
-    createdOn?: string;
-    modifiedOn?: string;
-    editable: boolean;
+    createdOn: Date;
+    modifiedOn?: Date;
+    isInEditMode?: boolean;
+    updatedUser?: IUser;
 }

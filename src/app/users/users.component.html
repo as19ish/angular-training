@@ -18,32 +18,32 @@
         <tr *ngFor="let user of users;">
             <td>{{ user.id }}</td>
             <td>
-                <span *ngIf="!user.editable">{{ user.firstName }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.firstName" />
+                <span *ngIf="!user.isInEditMode">{{ user.firstName }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.firstName" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.middleName }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.middleName" />
+                <span *ngIf="!user.isInEditMode">{{ user.middleName }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.middleName" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.lastName }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.lastName" />
+                <span *ngIf="!user.isInEditMode">{{ user.lastName }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.lastName" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.email }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.email" />
+                <span *ngIf="!user.isInEditMode">{{ user.email }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.email" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.phone }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.phone" />
+                <span *ngIf="!user.isInEditMode">{{ user.phone }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.phone" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.role }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.role" />
+                <span *ngIf="!user.isInEditMode">{{ user.role }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.role" />
             </td>
             <td>
-                <span *ngIf="!user.editable">{{ user.address }}</span>
-                <input *ngIf="eUser.id === user.id && eUser.editable" [(ngModel)]="eUser.address" />
+                <span *ngIf="!user.isInEditMode">{{ user.address }}</span>
+                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.address" />
             </td>
             <td>
                 <span>{{ user.createdOn }}</span>
@@ -52,12 +52,12 @@
                 <span>{{ user.modifiedOn }}</span>
             </td>
             <td>
-                <em *ngIf="!user.editable" class="fa fa-edit" style="font-size: 30px; margin-right: 20px"
-                    (click)="updateUser(user.id)"></em>
-                <em *ngIf="!user.editable" class="fa fa-trash-o" style="font-size: 30px"
+                <em *ngIf="!user.isInEditMode" class="fa fa-edit" style="font-size: 30px; margin-right: 20px"
+                    (click)="user.openInUpdateMode()"></em>
+                <em *ngIf="!user.isInEditMode" class="fa fa-trash-o" style="font-size: 30px"
                     (click)="deleteUser(user.id)"></em>
-                <button *ngIf="user.editable" (click)="saveUser(user.id)">Save</button>
-                <button *ngIf="user.editable" (click)="cancelUpdate(user.id)">Cancel</button>
+                <button *ngIf="user.isInEditMode" (click)="user.update()">Save</button>
+                <button *ngIf="user.isInEditMode" (click)="user.cancelUpdate()">Cancel</button>
             </td>
         </tr>
     </table>

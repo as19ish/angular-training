@@ -10,9 +10,8 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 'Admin',
         address: 'Lucknow',
-        createdOn: new Date().toDateString(),
-        modifiedOn: new Date().toDateString(),
-        editable: false
+        createdOn: new Date(),
+        modifiedOn: new Date()
     },
     {
         id: 2,
@@ -23,9 +22,8 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 'Admin',
         address: 'Lucknow',
-        createdOn: new Date().toDateString(),
-        modifiedOn: new Date().toDateString(),
-        editable: false
+        createdOn: new Date(),
+        modifiedOn: new Date()
     },
     {
         id: 3,
@@ -36,8 +34,7 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 'Admin',
         address: 'Lucknow',
-        createdOn: new Date().toDateString(),
-        modifiedOn: new Date().toDateString(),
-        editable: false
+        createdOn: new Date(),
+        modifiedOn: new Date()
     }
 ];

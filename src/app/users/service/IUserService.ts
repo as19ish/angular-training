@@ -1,5 +1,5 @@
-import { IUser } from '../IUser';
+import { User } from '../User';
 
 export interface IUserService {
-    list(): IUser[];
+    list(): User[];
 }

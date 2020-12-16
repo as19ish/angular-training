@@ -1,3 +1,5 @@
+import { Roles } from '../types/Roles';
+
 export interface IUser{
     id: number,
     firstName: string;
@@ -6,7 +8,7 @@ export interface IUser{
     email: string;
     phone: number;
     address?: string;
-    role: string;
+    role: Roles;
     createdOn: Date;
     modifiedOn?: Date;
     isInEditMode?: boolean;

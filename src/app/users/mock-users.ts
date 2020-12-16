@@ -8,7 +8,7 @@ export const USERS: IUser[] = [
         lastName: 'Verma',
         email: 'megha@gmail.com',
         phone: 7985223304,
-        role: 'Admin',
+        role: 0,
         address: 'Lucknow',
         createdOn: new Date(),
         modifiedOn: new Date()
@@ -20,7 +20,7 @@ export const USERS: IUser[] = [
         lastName: 'Sharma',
         email: 'nehasharma@gmail.com',
         phone: 7985223304,
-        role: 'Admin',
+        role: 1,
         address: 'Lucknow',
         createdOn: new Date(),
         modifiedOn: new Date()
@@ -32,7 +32,7 @@ export const USERS: IUser[] = [
         lastName: 'Khan',
         email: 'arbaazkhan@gmail.com',
         phone: 7985223304,
-        role: 'Admin',
+        role: 0,
         address: 'Lucknow',
         createdOn: new Date(),
         modifiedOn: new Date()

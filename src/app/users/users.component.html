@@ -38,8 +38,12 @@
                 <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.phone" />
             </td>
             <td>
-                <span *ngIf="!user.isInEditMode">{{ user.role }}</span>
-                <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.role" />
+                <span *ngIf="!user.isInEditMode">{{ user.getRole() }}</span>
+                <select *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.role">
+                    <option value="">--Select a role--</option>
+                    <option value="0">Admin</option>
+                    <option value="1">SuperAdmin</option>
+                </select>
             </td>
             <td>
                 <span *ngIf="!user.isInEditMode">{{ user.address }}</span>

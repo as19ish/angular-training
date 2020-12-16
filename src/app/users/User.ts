@@ -1,3 +1,4 @@
+import { Roles } from '../types/Roles';
 import { IUser } from './IUser';
 
 export class User implements IUser {
@@ -8,7 +9,7 @@ export class User implements IUser {
     email: string;
     phone: number;
     address: string | undefined;
-    role: string;
+    role: Roles;
     createdOn: Date;
     modifiedOn: Date | undefined;
     isInEditMode: boolean;
@@ -27,6 +28,10 @@ export class User implements IUser {
         this.modifiedOn = user.modifiedOn;
         this.isInEditMode = false;
         this.updatedUser = this;
+    }
+
+    getRole() {
+        return Roles[this.role];
     }
 
     openInUpdateMode() {

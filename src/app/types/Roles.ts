@@ -1,4 +1,5 @@
 export enum Roles {
     Admin,
-    SuperAdmin
+    SuperAdmin,
+    Subscriber
 }

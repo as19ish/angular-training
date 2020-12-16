@@ -1,3 +1,4 @@
+import { DateFormat } from '../decorators/DateFormat';
 import { Roles } from '../types/Roles';
 import { IUser } from './IUser';
 
@@ -10,10 +11,16 @@ export class User implements IUser {
     phone: number;
     address: string | undefined;
     role: Roles;
-    createdOn: Date;
-    modifiedOn: Date | undefined;
+    createdAt: Date;
+    modifiedAt: Date | undefined;
     isInEditMode: boolean;
     updatedUser: IUser;
+    
+    @DateFormat('createdAt')
+    creationDate?: string;
+
+    @DateFormat('modifiedAt')
+    modificationDate?: string;
 
     constructor(user: IUser) {
         this.id = user.id;
@@ -24,8 +31,8 @@ export class User implements IUser {
         this.phone = user.phone;
         this.role = user.role;
         this.address = user.address;
-        this.createdOn = user.createdOn;
-        this.modifiedOn = user.modifiedOn;
+        this.createdAt = user.createdAt;
+        this.modifiedAt = user.modifiedAt;
         this.isInEditMode = false;
         this.updatedUser = this;
     }

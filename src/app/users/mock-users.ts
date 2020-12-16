@@ -10,8 +10,8 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 0,
         address: 'Lucknow',
-        createdOn: new Date(),
-        modifiedOn: new Date()
+        createdAt: new Date(),
+        modifiedAt: new Date()
     },
     {
         id: 2,
@@ -22,8 +22,8 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 1,
         address: 'Lucknow',
-        createdOn: new Date(),
-        modifiedOn: new Date()
+        createdAt: new Date(),
+        modifiedAt: new Date()
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ export const USERS: IUser[] = [
         phone: 7985223304,
         role: 0,
         address: 'Lucknow',
-        createdOn: new Date(),
-        modifiedOn: new Date()
+        createdAt: new Date(),
+        modifiedAt: new Date()
     }
 ];

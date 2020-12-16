@@ -9,8 +9,8 @@ export interface IUser{
     phone: number;
     address?: string;
     role: Roles;
-    createdOn: Date;
-    modifiedOn?: Date;
+    createdAt: Date;
+    modifiedAt?: Date;
     isInEditMode?: boolean;
     updatedUser?: IUser;
 }

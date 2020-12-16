@@ -43,6 +43,7 @@
                     <option value="">--Select a role--</option>
                     <option value="0">Admin</option>
                     <option value="1">SuperAdmin</option>
+                    <option value="2" >Subscriber</option>
                 </select>
             </td>
             <td>
@@ -50,10 +51,10 @@
                 <input *ngIf="user.isInEditMode" [(ngModel)]="user.updatedUser.address" />
             </td>
             <td>
-                <span>{{ user.createdOn }}</span>
+                <span>{{ user.creationDate }}</span>
             </td>
             <td>
-                <span>{{ user.modifiedOn }}</span>
+                <span>{{ user.modificationDate }}</span>
             </td>
             <td>
                 <em *ngIf="!user.isInEditMode" class="fa fa-edit" style="font-size: 30px; margin-right: 20px"

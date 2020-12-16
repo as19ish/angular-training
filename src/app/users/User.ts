@@ -34,7 +34,7 @@ export class User implements IUser {
         this.createdAt = user.createdAt;
         this.modifiedAt = user.modifiedAt;
         this.isInEditMode = false;
-        this.updatedUser = this;
+        this.updatedUser = Object.assign({}, {...this});
     }
 
     getRole() {
@@ -58,7 +58,7 @@ export class User implements IUser {
 
     cancelUpdate() {
         this.isInEditMode = false;
-        this.updatedUser = this;
+        this.updatedUser = Object.assign({}, {...this});;
     }
     
 }
